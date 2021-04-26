@@ -39,21 +39,23 @@ module.exports = (sequelize, DataTypes) => {
         len: [60, 60]
       },
     },
+    //TODO: Fix Date Validations
     birthDate: {
       type: DataTypes.DATE,
       allowNull: false,
-      validate: {
-        isDate: {
-          msg: "Please enter a birthdate in format YYYY-MM-DD"
-        },
-        isOverEighteen(val) {
-          const d = new Date();
-          const c = `${parseInt(d.getFullYear(), 10) - 18}-${d.toISOString().slice(5, 10)}`
-          if (Validator.isAfter(val, c)) {
-            throw new Error('You must be 18 years old to use errbnb');
-          }
-        }
-      }
+      // validate: {
+      //   // isDate: {
+      //   //   msg: "Please enter a birthdate in format YYYY-MM-DD"
+      //   // },
+      //   isOverEighteen(val) {
+      //     console.log('*****Entered With*****', val);
+      //     const d = new Date();
+      //     const c = `${parseInt(d.getFullYear(), 10) - 18}-${d.toISOString().slice(5, 10)}`
+      //     if (Validator.isAfter(val, c)) {
+      //       throw new Error('You must be 18 years old to use errbnb');
+      //     }
+      //   }
+      // }
     }
   },
     {
