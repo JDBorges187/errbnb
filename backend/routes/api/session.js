@@ -26,7 +26,7 @@ router.post('/', asyncHandler(async (req,res,next)=>{
     });
 }))
 
-// Get out of my house, Focker!
+// Get outta here!
 router.delete(
     '/',
     (_req, res) => {
