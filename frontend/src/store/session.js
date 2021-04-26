@@ -5,6 +5,7 @@ const LOAD_USER = 'session/LOAD_USER'
 const REMOVE_USER = 'session/REMOVE_USER'
 
 
+
 const loadUser = user => ({
     type: LOAD_USER,
     user,
@@ -45,6 +46,13 @@ export const logout = () => async dispatch => {
 
     dispatch(removeUser())
 }
+
+export const restoreUser = () => async dispatch => {
+    const response = await csrfFetch('/api/session');
+    const data = await response.json();
+    dispatch(loadUser(data.user));
+    return response;
+  };
 
 
 const initialState = { user: null }
