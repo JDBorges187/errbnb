@@ -1,0 +1,15 @@
+.signup-form-holder {
+    background-color: white;
+    border-radius: 5px;
+    max-width: 400px;
+    min-height: 50%;
+    margin: 100px;
+    box-shadow: 0 0 20px rgba(72,94,116,0.7);
+}
+
+.signup-form {
+    padding: 100px 1em;
+    display: flex;
+    flex-direction: column;
+}
+
