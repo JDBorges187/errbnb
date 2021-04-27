@@ -1,0 +1,14 @@
+nav {
+    background-color: #161b22 !important;
+    color: cyan;
+    padding: 10px 40px 10px 70px;
+    border: 1px solid white;
+    border-left: none;
+    border-right: none;
+
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
