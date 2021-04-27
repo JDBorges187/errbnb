@@ -12,16 +12,16 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING(50)
       },
-      abbr: {
+      isoCode: {
         allowNull: false,
         type: Sequelize.STRING(2),
         unique: true
       },
-      lat: {
+      latitude: {
         allowNull: false,
         type: Sequelize.FLOAT
       },
-      long: {
+      longitude: {
         allowNull: false,
         type: Sequelize.FLOAT
       },

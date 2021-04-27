@@ -12,7 +12,7 @@ module.exports = {
       },
       name: {
         allowNull: false,
-        type: Sequelize.STRING(50)
+        type: Sequelize.STRING(50),
       },
       stateId: {
         allowNull: false,
@@ -22,11 +22,11 @@ module.exports = {
           key: "id",
         },
       },
-      lat: {
+      latitude: {
         allowNull: false,
         type: Sequelize.FLOAT
       },
-      long: {
+      longitude: {
         allowNull: false,
         type: Sequelize.FLOAT
       },
@@ -40,6 +40,11 @@ module.exports = {
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn('now')
       }
+    },{
+      indexes: [{
+        unique:true,
+        fields: ['name', 'stateId']
+      }],
     });
   },
   down: (queryInterface, Sequelize) => {
