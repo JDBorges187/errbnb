@@ -6,7 +6,7 @@ import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
 const SignupFormPage = () => {
-    const d=new Date()
+    const d = new Date()
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
     const [firstName, setFirstName] = useState("");
@@ -21,9 +21,9 @@ const SignupFormPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (password !==confirmPassword) return setErrors(
+        if (password !== confirmPassword) return setErrors(
             ['Confirm Password field must be the same as the Password field']
-            );
+        );
         setErrors([]);
         return dispatch(sessionActions.signup({
             firstName,
@@ -64,7 +64,7 @@ const SignupFormPage = () => {
                 </label>
                 <DatePicker
                     onChange={(e) => setBirthDate(e)}
-                value={birthDate} />
+                    value={birthDate} />
                 <label>
                     Email
                     <input
