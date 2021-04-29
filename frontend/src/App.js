@@ -5,6 +5,7 @@ import LoginFormPage from './components/LoginFormPage';
 import Navigation from "./components/Navigation";
 import SignupFormPage from './components/SignupFormPage';
 import * as sessionActions from "./store/session";
+import Container from '@material-ui/core/Container'
 
 
 function App() {
@@ -18,19 +19,27 @@ function App() {
   return isLoaded && (
     <>
       <Navigation isLoaded={isLoaded} />
-        {isLoaded && (
-          <Switch>
-            <Route path="/login">
+      {isLoaded && (
+        <Switch>
+          <Route path="/login">
+            <Container fixed>
+
               <LoginFormPage />
-            </Route>
-            <Route path="/signup">
+            </Container>
+          </Route>
+          <Route path="/signup">
+            <Container fixed>
+
               <SignupFormPage />
-            </Route>
-            <Route path="/places">
+            </Container>
+          </Route>
+          <Route path="/places">
+            <Container fixed>
               <h1>Hello from Places</h1>
-            </Route>
-          </Switch>
-        )}
+            </Container>
+          </Route>
+        </Switch>
+      )}
     </>
   );
 }
