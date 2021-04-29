@@ -8,6 +8,7 @@ body {
     display: flex;
 }
 
-.login-form-holder {
-    margin: auto;
+.login-form {
+    display: flex;
+    justify-content: space-around;
 }

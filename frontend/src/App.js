@@ -26,6 +26,9 @@ function App() {
             <Route path="/signup">
               <SignupFormPage />
             </Route>
+            <Route path="/places">
+              <h1>Hello from Places</h1>
+            </Route>
           </Switch>
         )}
     </>
