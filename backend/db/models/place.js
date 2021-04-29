@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     price: {
       allowNull: false,
-      type: DataTypes.DECIMAL(10,2),
+      type: DataTypes.DECIMAL(10, 2),
       notNull: {
         msg: "Please provide a valid price per night"
       },
@@ -74,8 +74,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
     },
   }, {});
-  Place.associate = function(models) {
+  Place.associate = function (models) {
     // associations can be defined here
+    Place.belongsTo(models.State, { foreignKey: "stateId" })
+    Place.belongsTo(models.City, { foreignKey: "cityId" })
+    Place.belongsTo(models.PlaceType, {foreignKey: "placeTypeId"})
   };
   return Place;
 };
