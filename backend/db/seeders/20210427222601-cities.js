@@ -1,5 +1,6 @@
 'use strict';
 const csc = require('country-state-city').default
+
 const { State } = require('../models')
 
 module.exports = {
