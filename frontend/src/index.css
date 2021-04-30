@@ -6,17 +6,22 @@
     padding: 0;
 }
 
-body {
+.places,.login, .signup {
     background-color: #485461;
     background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
     color: grey;
-    height: 100vh;
-
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
 }
 
-.MuiContainer-root{
-    background-color: lightgrey;
-    height: 100vh;
+.home {
+    background: url('https://marketplace.org/wp-content/uploads/2020/12/ppllikewfh.jpg') center center/cover no-repeat;
     display: flex;
-    align-items: center;
+    height: 90vh;
+    align-items: baseline;
+    justify-content: center;
+    
 }

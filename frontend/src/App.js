@@ -7,6 +7,8 @@ import SignupFormPage from './components/SignupFormPage';
 import * as sessionActions from "./store/session";
 import PlacesFormPage from './components/PlacesFormPage'
 import PlacesBrowser from "./components/PlacesBrowser";
+import HomePage from "./components/HomePage";
+
 
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
+  
   return isLoaded && (
     <>
       <Navigation isLoaded={isLoaded} />
@@ -33,6 +36,9 @@ function App() {
           </Route>
           <Route path="/host">
             <PlacesFormPage />
+          </Route>
+          <Route path="/" exact>
+            <HomePage/>
           </Route>
         </Switch>
       )}
