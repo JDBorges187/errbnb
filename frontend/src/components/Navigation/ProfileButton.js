@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import * as sessionActions from '../../store/session'
-import ZoomOutRounded from '@material-ui/icons/ZoomOutRounded'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 
 

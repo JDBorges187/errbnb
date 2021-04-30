@@ -1,0 +1,24 @@
+.places-form-holder {
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+}
+
+.places-form {
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+    background-color: black;
+    border-radius: 10px;
+    box-sizing: border-box;
+
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

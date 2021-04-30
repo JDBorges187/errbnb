@@ -1,10 +1,7 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
-<<<<<<< Updated upstream
 const placesRouter = require('./places.js')
-=======
->>>>>>> Stashed changes
 
 // const asyncHandler = require('express-async-handler');
 // const { setTokenCookie } = require('../../utils/auth.js');
@@ -14,11 +11,8 @@ router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
-<<<<<<< Updated upstream
 router.use('/places', placesRouter)
 
-=======
->>>>>>> Stashed changes
 // router.post('/test', function (req, res) {
 //   res.json({ requestBody: req.body });
 // });
