@@ -6,7 +6,7 @@ const { Place, User, PlaceType, City, State } = require('../../db/models');
 
 router.get('/', asyncHandler(async (req, res, next) => {
     
-    console.log('test')
+    // console.log('test')
     const places = await Place.findAll({
         include: [PlaceType, City, State]
     });
