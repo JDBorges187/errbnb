@@ -26,17 +26,17 @@ function PlacesFormPage() {
     const handleSubmit = (e) => {
         e.preventDefault()
         setErrors([])
-        console.log({
-            title,
-            price,
-            bedrooms,
-            bathrooms,
-            beds,
-            placeType,
-            arrangement,
-            description,
-            spotPhotos,
-        })
+        // console.log({
+        //     title,
+        //     price,
+        //     bedrooms,
+        //     bathrooms,
+        //     beds,
+        //     placeType,
+        //     arrangement,
+        //     description,
+        //     spotPhotos,
+        // })
     }
     return (
         <div className="places-form-holder">

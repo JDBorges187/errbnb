@@ -4,8 +4,9 @@
     flex-wrap: wrap;
     /* display: grid;
     grid-template-columns: 1fr 1fr 1fr; */
-    gap: 2rem; 
-    max-width: 1200px
+    gap: 2rem;
+    max-width: 1200px;
+    justify-content: center;
 }
 
 .card {
@@ -14,17 +15,18 @@
     flex: 0 0 30%;
     max-width: 450px;
     overflow: hidden;
-    background: #fff;
-    color: rgb(70, 60, 60);
+    background: #485461;
+    color: lightgrey;
     border-radius: 5px;
     text-decoration: none;
     box-shadow: 0 0 14px rgba(#fff, 0.4);
 }
+
 .card__image {
     background: url('https://marketplace.org/wp-content/uploads/2020/12/ppllikewfh.jpg') center center/cover no-repeat;
     flex: 0 0 120px;
 }
-
+.card__content { padding: 1rem;}
 .card__title {
     font-size: 1.25rem;
     font-weight: 700;

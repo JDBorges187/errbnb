@@ -1,12 +1,14 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import geoReducer from "./geo";
+import placesReducer from "./places";
 import sessionReducer from './session'
 
 const rootReducer = combineReducers({
   // add reducer functions here
   session: sessionReducer,
-  geo: geoReducer
+  geo: geoReducer,
+  places: placesReducer
 });
 
 let enhancer;
