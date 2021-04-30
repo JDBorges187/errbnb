@@ -1,0 +1,7 @@
+.hero-container {
+    background-color: rgba(#485461,0.3);
+    width: 400px;
+    height: 400px;
+    display: flex;
+    margin: 100px;
+}

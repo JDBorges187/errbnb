@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
 nav {
     background-color: #485461;
     font-size: 20px;
@@ -16,4 +18,10 @@ nav ul {
 .nav__link {
     text-decoration: none;
     color: lightgrey;
+}
+
+.logo {
+    font-family: 'Satisfy', cursive;
+    padding-right: 20px;
+    padding-top: 4px;
 }
