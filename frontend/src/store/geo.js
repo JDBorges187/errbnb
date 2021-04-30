@@ -20,7 +20,7 @@ export const getStates = () => async dispatch => {
 
 const initialState = {
     states: [],
-    cities: []
+    cities: [] 
 }
 
 const geoReducer = (state = initialState, action) => {
