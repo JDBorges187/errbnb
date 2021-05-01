@@ -15,14 +15,14 @@ router.get('/', asyncHandler(async (req, res, next) => {
     const statesObj = {}
 
     states.forEach(state=>{
-        statesObj[state.id] = state.name
+        statesObj[state.id] = state;
     })
 
     res.json(statesObj);
 
 }))
 
-router.get('/:id', asyncHandler(async(req,res,next) => {
+router.get('/:id/cities', asyncHandler(async(req,res,next) => {
     const stateId = req.params.id;
 
     const state = await State.findByPk(stateId, {
@@ -33,7 +33,11 @@ router.get('/:id', asyncHandler(async(req,res,next) => {
         }
     })
 
-    res.json(state)
+    const cities = {};
+
+    state.Cities.forEach(city=> cities[city.id] = city.name)
+
+    res.json(cities)
 }));
 
 

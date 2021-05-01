@@ -6,7 +6,7 @@
     padding: 0;
 }
 
-.places,.login, .signup {
+.places,.login, .signup, .host {
     background-color: #485461;
     background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
     color: grey;
@@ -14,6 +14,9 @@
     height: 90vh;
     align-items: center;
     justify-content: center;
+}
+.places{
+
     overflow-y: scroll;
 }
 
