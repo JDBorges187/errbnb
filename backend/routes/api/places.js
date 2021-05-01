@@ -11,8 +11,12 @@ router.get('/', asyncHandler(async (req, res, next) => {
         include: [PlaceType, City, State]
     });
     
+    const placesObj = {};
+    places.forEach(place=>{
+        placesObj[place.id] = place;
+    })
 
-    res.json(places);
+    res.json(placesObj);
 
 }))
 

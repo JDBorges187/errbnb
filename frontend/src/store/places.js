@@ -8,13 +8,13 @@ const loadPlaces = list => ({
 })
 
 export const getPlaces = () => async dispatch => {
-    const res = await csrfFetch('/api/places');
+    const res = await fetch('/api/places');
 
     if (!res.ok) throw res;
 
-    const list = res.json();
+    const list = await res.json();
 
-    //console.log(list)
+    console.log(list)
 
     dispatch(loadPlaces(list));
 
@@ -22,7 +22,7 @@ export const getPlaces = () => async dispatch => {
 
 }
 
-const initialState = { list: [], details: {}}
+const initialState = { list: {}, details: {}}
 
 const placesReducer = (state = initialState, action) => {
     switch (action.type) {
