@@ -8,6 +8,7 @@ import * as sessionActions from "./store/session";
 import PlacesFormPage from './components/PlacesFormPage'
 import PlacesBrowser from "./components/PlacesBrowser";
 import HomePage from "./components/HomePage";
+import Booking from "./components/Booking/Booking";
 
 
 
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path="/host">
             <PlacesFormPage />
+          </Route>
+          <Route path="/booking" exact>
+            <Booking/>
           </Route>
           <Route path="/" exact>
             <HomePage/>
