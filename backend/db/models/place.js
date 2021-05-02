@@ -78,6 +78,7 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     Place.belongsTo(models.State, { foreignKey: "stateId" })
     Place.belongsTo(models.City, { foreignKey: "cityId" })
+    Place.belongsTo(models.User, {foreignKey: "userId"})
     // Place.belongsTo(models.PlaceType, {foreignKey: "placeTypeId"})
   };
   return Place;
