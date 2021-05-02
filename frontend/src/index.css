@@ -6,18 +6,23 @@
     padding: 0;
 }
 
-.places,.login, .signup, .host ,.booking{
+.login, .signup, .host ,.booking{
     background-color: #485461;
     background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
-    color: grey;
+    
     display: flex;
+    flex-direction: column;
     height: 90vh;
     align-items: center;
     justify-content: center;
 }
 .places{
-
-    overflow-y: scroll;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    color: grey;
+    display: block;
+    align-items: flex-start;
+    /* overflow-y: scroll; */
 }
 
 .home {
