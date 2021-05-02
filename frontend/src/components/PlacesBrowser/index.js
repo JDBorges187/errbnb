@@ -6,88 +6,33 @@ import './Places.css'
 
 function PlacesBrowser() {
     const dispatch = useDispatch();
-    const [places, setPlaces] = useState([])
-    const [isLoaded, setIsLoaded] = useState([])
+    const places = useSelector(state => {
+       return Object.keys(state.places.list).map(id=>state.places.list[id])
+    })
+    const [isLoaded, setIsLoaded] = useState(false)
 
     useEffect(() => {
-        // dispatch(placesActions.getPlaces())
+        dispatch(placesActions.getPlaces()).then(() => setIsLoaded(true))
     }, [dispatch])
+
+    if (!places || !isLoaded) return (<h1>Loading...</h1>)
 
     return (
         <div className="places">
             <div className="cards">
-                <Link to="/" className="card">
-                    <div className="card__image"></div>
+                {places.map(place=>(
+                    <Link key={place.id} to={`/places/${place.id}`} className="card">
+                    <div style={{ backgroundImage: `url('${place.spotPhotos}')` }} className="card__image"></div>
                     <div className="card__content">
                         <div className="card__title">
-                            Stay at this Magificent Condo
+                            {place.title}
                         </div>
                         <div className="card__info">
-                            3 Beds | 2 Bedrooms | 1 Bath
+                            {`${place.bedrooms} Bedrooms | ${place.bathrooms} Bathrooms | ${place.beds} Beds`}
                         </div>
-                        <div className="card__book"> BOOK</div>
+                        <div className="card__book">BOOK</div>
                     </div>
-                </Link>
-                <Link to="/" className="card">
-                    <div className="card__image"></div>
-                    <div className="card__content">
-                        <div className="card__title">
-                            Stay at this Magificent Condo
-                        </div>
-                        <div className="card__info">
-                            3 Beds | 2 Bedrooms | 1 Bath
-                        </div>
-                        <div className="card__book"> BOOK</div>
-                    </div>
-                </Link>
-                <Link to="/" className="card">
-                    <div className="card__image"></div>
-                    <div className="card__content">
-                        <div className="card__title">
-                            Stay at this Magificent Condo
-                        </div>
-                        <div className="card__info">
-                            3 Beds | 2 Bedrooms | 1 Bath
-                        </div>
-                        <div className="card__book"> BOOK</div>
-                    </div>
-                </Link>
-                <Link to="/" className="card">
-                    <div className="card__image"></div>
-                    <div className="card__content">
-                        <div className="card__title">
-                            Stay at this Magificent Condo
-                        </div>
-                        <div className="card__info">
-                            3 Beds | 2 Bedrooms | 1 Bath
-                        </div>
-                        <div className="card__book"> BOOK</div>
-                    </div>
-                </Link>
-                <Link to="/" className="card">
-                    <div className="card__image"></div>
-                    <div className="card__content">
-                        <div className="card__title">
-                            Stay at this Magificent Condo
-                        </div>
-                        <div className="card__info">
-                            3 Beds | 2 Bedrooms | 1 Bath
-                        </div>
-                        <div className="card__book"> BOOK</div>
-                    </div>
-                </Link>
-                <Link to="/" className="card">
-                    <div className="card__image"></div>
-                    <div className="card__content">
-                        <div className="card__title">
-                            Stay at this Magificent Condo
-                        </div>
-                        <div className="card__info">
-                            3 Beds | 2 Bedrooms | 1 Bath
-                        </div>
-                        <div className="card__book"> BOOK</div>
-                    </div>
-                </Link>
+                </Link>))}
             </div>
         </div>
     )

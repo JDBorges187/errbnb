@@ -51,9 +51,9 @@ router.get('/', asyncHandler(async (req, res, next) => {
 
     // console.log('test')
     const places = await Place.findAll({
-        include: [PlaceType, City, State],
-        limit: 6,
-        order: ['createdAt','DESC']
+        include: [ City, State],
+        // limit: 6,
+        order: [['createdAt', 'DESC']]
     });
 
     const placesObj = {};
