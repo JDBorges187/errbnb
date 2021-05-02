@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as geoActions from '../../store/geo'
 import { Redirect } from 'react-router-dom'
+import * as placeActions from '../../store/places'
 import './PlacesForm.css';
 
 
@@ -15,8 +16,8 @@ function PlacesFormPage() {
     const [bedrooms, setBedrooms] = useState(0); //*
     const [bathrooms, setBathrooms] = useState(0); //*
     const [beds, setBeds] = useState(0); //*
-    const [placeType, setPlaceType] = useState('1');
-    const [arrangement, setArrangement] = useState('1');
+    // const [placeType, setPlaceType] = useState('1');
+    // const [arrangement, setArrangement] = useState('1');
     const [description, setDescription] = useState('');
     const [spotPhotos, setSpotPhotos] = useState('');
     const [cityId, setCityId] = useState('1');
@@ -24,10 +25,6 @@ function PlacesFormPage() {
     const [stateId, setStateId] = useState('0');
     const [errors, setErrors] = useState([]);
 
-    
-    
-    
-    
     useEffect(() => {
         dispatch(geoActions.getStates())
     }, [dispatch])
@@ -50,17 +47,20 @@ function PlacesFormPage() {
     const handleSubmit = (e) => {
         e.preventDefault()
         setErrors([])
-        // console.log({
-        //     title,
-        //     price,
-        //     bedrooms,
-        //     bathrooms,
-        //     beds,
-        //     placeType,
-        //     arrangement,
-        //     description,
-        //     spotPhotos,
-        // })
+
+        const res = dispatch(placeActions.createPlace({
+            stateId,
+            cityId,
+                title,
+                price,
+                bedrooms,
+                bathrooms,
+                beds,
+                description,
+                spotPhotos,
+            }))
+
+        console.log(res)
     }
     return (
         <div className="host">
@@ -150,7 +150,7 @@ function PlacesFormPage() {
                             required
                         />
                     </label>
-                    <label>
+                    {/* <label>
                         Property Type
                     <input
                             type="text"
@@ -167,7 +167,7 @@ function PlacesFormPage() {
                             onChange={(e) => setArrangement(e.target.value)}
                             required
                         />
-                    </label>
+                    </label> */}
                     <label>
                         Description
                     <textarea

@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   PlaceType.associate = function(models) {
     // associations can be defined here
-    PlaceType.hasMany(models.Place, {foreignKey: "placeTypeId"})
+    // PlaceType.hasMany(models.Place, {foreignKey: "placeTypeId"})
   };
   return PlaceType;
 };

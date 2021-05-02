@@ -13,7 +13,7 @@ module.exports = {
         type: Sequelize.STRING(50)
       },
       arrangement: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.STRING(50)
       },
       createdAt: {

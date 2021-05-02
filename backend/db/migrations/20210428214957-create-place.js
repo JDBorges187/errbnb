@@ -36,17 +36,17 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER
       },
-      placeTypeId: {
-        allowNull: false,
-        type: Sequelize.INTEGER,
-        references: {
-          model: "PlaceTypes",
-          key: "id",
-        },
-      },
-      amenities: {
-        type: Sequelize.STRING(100)
-      },
+      // placeTypeId: {
+      //   allowNull: false,
+      //   type: Sequelize.INTEGER,
+      //   references: {
+      //     model: "PlaceTypes",
+      //     key: "id",
+      //   },
+      // },
+      // amenities: {
+      //   type: Sequelize.STRING(100)
+      // },
       spotPhotos: {
         allowNull: false,
         type: Sequelize.STRING(255)
@@ -55,16 +55,16 @@ module.exports = {
         allowNull: false,
         type: Sequelize.TEXT
       },
-      address: {
-        allowNull: false,
-        type: Sequelize.STRING(255)
-      },
+      // address: {
+      //   allowNull: false,
+      //   type: Sequelize.STRING(255)
+      // },
       latitude: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.FLOAT
       },
       longitude: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.FLOAT
       },
       cityId: {
