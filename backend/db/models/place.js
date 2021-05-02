@@ -45,13 +45,13 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    placeTypeId: {
-      allowNull: false,
-      type: DataTypes.INTEGER, //TODO: Validations?
-    },
-    amenities: {
-      type: DataTypes.STRING(100) //TODO: Validations?
-    },
+    // placeTypeId: {
+    //   allowNull: false,
+    //   type: DataTypes.INTEGER, //TODO: Validations?
+    // },
+    // amenities: {
+    //   type: DataTypes.STRING(100) //TODO: Validations?
+    // },
     spotPhotos: {
       allowNull: false,
       type: DataTypes.STRING(255) //TODO: Validations?
@@ -78,7 +78,7 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     Place.belongsTo(models.State, { foreignKey: "stateId" })
     Place.belongsTo(models.City, { foreignKey: "cityId" })
-    Place.belongsTo(models.PlaceType, {foreignKey: "placeTypeId"})
+    // Place.belongsTo(models.PlaceType, {foreignKey: "placeTypeId"})
   };
   return Place;
 };

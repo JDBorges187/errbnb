@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as geoActions from '../../store/geo'
 import { Redirect } from 'react-router-dom'
+import * as placeActions from '../../store/places'
 import './PlacesForm.css';
 
 
@@ -50,6 +51,20 @@ function PlacesFormPage() {
     const handleSubmit = (e) => {
         e.preventDefault()
         setErrors([])
+
+        dispatch(placeActions.createPlace({
+            stateId,
+            cityId,
+                title,
+                price,
+                bedrooms,
+                bathrooms,
+                beds,
+                placeType,
+                arrangement,
+                description,
+                spotPhotos,
+            }))
         // console.log({
         //     title,
         //     price,

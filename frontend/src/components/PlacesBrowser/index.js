@@ -10,17 +10,7 @@ function PlacesBrowser() {
     const [isLoaded, setIsLoaded] = useState([])
 
     useEffect(() => {
-        dispatch(placesActions.getPlaces())
-            // .then(async (res) => {
-            //     const data = await res.json();
-            //     if (data) {
-            //         setPlaces(data);
-            //         setIsLoaded(true);
-            //     }
-            // });
-
-        //console.log('Loaded')
-
+        // dispatch(placesActions.getPlaces())
     }, [dispatch])
 
     return (
