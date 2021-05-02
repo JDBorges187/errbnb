@@ -9,13 +9,17 @@ nav {
     color: #3d2413;
     width: 100vmax;
     box-shadow:  2px 4px rgb(0 0 0 / 12%);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
 }
 
-nav ul {
+nav {
     display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.nav__link {
+.nav__link, .nav__link:visited {
     text-decoration: none;
     color: lightgrey;
 }

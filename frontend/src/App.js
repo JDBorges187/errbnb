@@ -9,6 +9,7 @@ import PlacesFormPage from './components/PlacesFormPage'
 import PlacesBrowser from "./components/PlacesBrowser";
 import HomePage from "./components/HomePage";
 import Booking from "./components/Booking/Booking";
+import PlacesDetailPage from "./components/PlacesDetailPage";
 
 
 
@@ -42,7 +43,8 @@ function App() {
             <Booking/>
           </Route>
           <Route path="/" exact>
-            <HomePage/>
+            <PlacesDetailPage/>
+            {/* <HomePage/> */}
           </Route>
         </Switch>
       )}
