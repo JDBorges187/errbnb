@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as geoActions from '../../store/geo'
-import { Redirect } from 'react-router-dom'
+import { Redirect, useHistory } from 'react-router-dom'
 import * as placeActions from '../../store/places'
 import './PlacesForm.css';
 
@@ -24,11 +24,12 @@ function PlacesFormPage() {
     const [showCities, setShowCities] = useState(false);
     const [stateId, setStateId] = useState('0');
     const [errors, setErrors] = useState([]);
-
+    const history = useHistory()
+    
     useEffect(() => {
         dispatch(geoActions.getStates())
     }, [dispatch])
-
+    
     useEffect(()=>{
         if (stateId !== "0") {
             dispatch(geoActions.getCities(stateId))
@@ -36,31 +37,33 @@ function PlacesFormPage() {
         }
     },[stateId, dispatch])
     
-
+    
     if (!sessionUser) return (
         <Redirect to='/login' />
-    )
+        )
 
-    if (!geoStates) return null;
+        if (!geoStates) return null;
+        
 
-
-    const handleSubmit = (e) => {
+        const handleSubmit = (e) => {
         e.preventDefault()
         setErrors([])
-
+        
         const res = dispatch(placeActions.createPlace({
             stateId,
             cityId,
-                title,
-                price,
-                bedrooms,
-                bathrooms,
-                beds,
-                description,
-                spotPhotos,
-            }))
+            title,
+            price,
+            bedrooms,
+            bathrooms,
+            beds,
+            description,
+            spotPhotos,
+        }))
+        
+        history.push('/places')
 
-        console.log(res)
+        // console.log(res)
     }
     return (
         <div className="host">
