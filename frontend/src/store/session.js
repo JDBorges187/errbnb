@@ -34,6 +34,13 @@ export const login = (user) => async dispatch => {
     return res;
 }
 
+export const demo = () => async dispatch => {
+    const res = await csrfFetch('/api/session/demo');
+    const data = await res.json();
+    dispatch(loadUser(data.user));
+    return res;
+}
+
 export const signup = (payload) => async dispatch=> {
     const {
         firstName,

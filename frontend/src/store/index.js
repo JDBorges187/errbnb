@@ -3,12 +3,15 @@ import thunk from "redux-thunk";
 import geoReducer from "./geo";
 import placesReducer from "./places";
 import sessionReducer from './session'
+import bookingsReducer from './bookings'
 
 const rootReducer = combineReducers({
   // add reducer functions here
   session: sessionReducer,
   geo: geoReducer,
-  places: placesReducer
+  places: placesReducer,
+  bookings: bookingsReducer
+
 });
 
 let enhancer;
