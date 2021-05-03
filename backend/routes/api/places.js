@@ -65,6 +65,23 @@ router.get('/', asyncHandler(async (req, res, next) => {
 
 }))
 
+router.get('/:id', asyncHandler(async(req,res,next)=>{
+    
+    const place = await Place.findByPk(req.params.id,{
+        include: User,
+    })
+
+    if (!place) {
+        const err = new Error('Resource Not Found');
+        err.status = 404;
+        err.title = 'Resource Not Foun';
+        err.errors = ['The provided Place id could not be found'];
+        return next(err);
+      }
+
+    res.json(place);
+}))
+
 
 
 module.exports = router;

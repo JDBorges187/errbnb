@@ -1,6 +1,7 @@
 import { csrfFetch } from "./csrf"
 
 const LOAD_PLACES = 'places/LOAD_PLACES'
+const LOAD_DETAILS = 'places/GET_DETAILS'
 const CREATE_PLACE = 'places/CREATE_PLACE'
 const ADD_PLACE = 'places/ADD_PLACE'
 
@@ -14,6 +15,11 @@ const addOnePlace = place => ({
     place
 })
 
+const loadDetails = place => ({
+    type: LOAD_DETAILS,
+    place
+})
+
 export const getPlaces = () => async dispatch => {
     const res = await fetch('/api/places');
 
@@ -21,12 +27,24 @@ export const getPlaces = () => async dispatch => {
 
     const list = await res.json();
 
-    console.log(list)
+    // console.log(list)
 
     dispatch(loadPlaces(list));
 
     // return res;
 
+}
+
+export const getDetails = (id) => async dispatch=> {
+    const res = await fetch(`/api/places/${id}`);
+
+    if (!res.ok) throw res;
+
+    const place = await res.json();
+
+    dispatch(loadDetails(place));
+    
+    return place;
 }
 
 export const createPlace = newPlace => async dispatch => {
@@ -55,6 +73,9 @@ const placesReducer = (state = initialState, action) => {
         }
         case ADD_PLACE: {
             return {...state, list: {...state.list, [action.place.id]: action.place}}
+        }
+        case LOAD_DETAILS: {
+            return {...state, details: {...state.details, [action.place.id]: action.place}}
         }
         default: return state;
     }

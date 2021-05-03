@@ -67,11 +67,11 @@ function PlacesFormPage() {
 
             <div className="places-form-holder">
                 <form className="places-form" onSubmit={handleSubmit}>
-                    <h2>Host Your Place!</h2>
+                    {/* <h2>Host Your Place!</h2> */}
                     <ul>
                         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                     </ul>
-                    <label>
+                    <label className="state">
                         State:
                         <select value={stateId} 
                             onChange={(e)=>setStateId(e.target.value)}>
@@ -85,7 +85,7 @@ function PlacesFormPage() {
                         </select>
                     </label>
                     {geoStates && (
-                        <label>
+                        <label className="city">
                         City:
                         <select value={cityId} 
                             onChange={(e)=>setCityId(e.target.value)}>
@@ -102,8 +102,8 @@ function PlacesFormPage() {
                         </select>
                     </label>
                     )}
-                    <label>
-                        Listing Title
+                    <label className="title">
+                        Listing Title:
                     <input
                             type="text"
                             value={title}
@@ -111,8 +111,8 @@ function PlacesFormPage() {
                             required
                         />
                     </label>
-                    <label>
-                        Price
+                    <label className="price">
+                        Price:
                     <input
                             type="number"
                             value={price}
@@ -120,8 +120,8 @@ function PlacesFormPage() {
                             required
                         />
                     </label>
-                    <label>
-                        Bedrooms
+                    <label className="bedrooms">
+                        Bedrooms:
                     <input
                             type="number"
                             min='0'
@@ -130,8 +130,8 @@ function PlacesFormPage() {
                             required
                         />
                     </label>
-                    <label>
-                        Bathrooms
+                    <label className="bathrooms">
+                        Bathrooms:
                     <input
                             type="number"
                             min='0'
@@ -140,8 +140,8 @@ function PlacesFormPage() {
                             required
                         />
                     </label>
-                    <label>
-                        Beds
+                    <label className="beds">
+                        Beds:
                     <input
                             type="number"
                             min='0'
@@ -150,7 +150,7 @@ function PlacesFormPage() {
                             required
                         />
                     </label>
-                    {/* <label>
+                    {/* <label className="">
                         Property Type
                     <input
                             type="text"
@@ -159,7 +159,7 @@ function PlacesFormPage() {
                             required
                         />
                     </label>
-                    <label>
+                    <label className="">
                         Entire Place
                     <input
                             type="text"
@@ -168,16 +168,16 @@ function PlacesFormPage() {
                             required
                         />
                     </label> */}
-                    <label>
-                        Description
+                    <label className="description">
+                        Description:
                     <textarea
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                             required
                         />
                     </label>
-                    <label>
-                        Upload a Photo
+                    <label className="photo">
+                        Upload a Photo:
                     <input
                             type="test"
                             value={spotPhotos}
@@ -185,7 +185,7 @@ function PlacesFormPage() {
                             required
                         />
                     </label>
-                    <button type="submit">List Your Place</button>
+                    <button className="places__form-btn" type="submit">List Your Place</button>
                 </form>
             </div>
         </div>

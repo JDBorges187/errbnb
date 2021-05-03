@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import * as placesActions from '../../store/places'
+import * as placeActions from '../../store/places'
 import { useDispatch, useSelector } from 'react-redux'
 import './Places.css'
 
@@ -13,7 +13,7 @@ function PlacesBrowser() {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        dispatch(placesActions.getPlaces()).then(() => setIsLoaded(true))
+        dispatch(placeActions.getPlaces()).then(() => setIsLoaded(true))
     }, [dispatch])
 
     if (!places || !isLoaded) return (<div className="places"><h1>Loading...</h1></div>)

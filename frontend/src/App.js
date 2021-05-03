@@ -33,8 +33,11 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/places">
+          <Route path="/places" exact>
             <PlacesBrowser />
+          </Route>
+          <Route path="/places/:placeId">
+            <PlacesDetailPage />
           </Route>
           <Route path="/host">
             <PlacesFormPage />
@@ -43,8 +46,7 @@ function App() {
             <Booking/>
           </Route>
           <Route path="/" exact>
-            <PlacesDetailPage/>
-            {/* <HomePage/> */}
+            <HomePage/>
           </Route>
         </Switch>
       )}
