@@ -1,5 +1,5 @@
 import { csrfFetch } from "./csrf"
-import moment from 'moment'
+// import moment from 'moment'
 
 const LOAD_PLACES = 'places/LOAD_PLACES'
 const LOAD_DETAILS = 'places/GET_DETAILS'
@@ -38,8 +38,6 @@ export const getPlaces = () => async dispatch => {
 
 export const getQueriedPlaces = ({startDate, endDate}) => async dispatch => {
 
-    const startDateStr = moment(startDate).format();
-    const endDateStr = moment(endDate).format();
 
     const res = await csrfFetch(`/api/places/search`,{
         method: 'POST',

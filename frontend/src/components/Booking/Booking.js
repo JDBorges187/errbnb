@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import "react-dates/initialize";
-import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
+import { DateRangePicker } from 'react-dates';
 import 'react-dates/lib/css/_datepicker.css'
 
 function Booking() {

@@ -3,6 +3,7 @@ const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
 const placesRouter = require('./places.js')
 const statesRouter = require('./states.js')
+const bookingRouter = require('./booking.js')
 
 // const asyncHandler = require('express-async-handler');
 // const { setTokenCookie } = require('../../utils/auth.js');
@@ -15,6 +16,8 @@ router.use('/users', usersRouter);
 router.use('/places', placesRouter)
 
 router.use('/states', statesRouter)
+
+router.use('/booking', bookingRouter)
 
 // router.post('/test', function (req, res) {
 //   res.json({ requestBody: req.body });

@@ -28,7 +28,7 @@ router.post('/', validateNewPlace, requireAuth,
             spotPhotos
         } = req.body;
 
-        console.log(req.user.id)
+        // console.log(req.user.id)
 
         const place = await Place.create({
             title,

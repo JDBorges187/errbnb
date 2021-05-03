@@ -41,6 +41,21 @@ router.post('/', validateLogin, asyncHandler(async (req, res, next) => {
   });
 }))
 
+router.get('/demo', asyncHandler(async (req,res,next)=> {
+  // const {email, password} = req.body;
+  const user = await User.findOne({
+    where: {
+      email: `demo@user.io`
+    }
+  });
+
+  await setTokenCookie(res, user);
+
+  return res.json({
+    user,
+  })
+}))
+
 // Get outta here!
 router.delete(
   '/',
