@@ -79,6 +79,7 @@ module.exports = (sequelize, DataTypes) => {
     Place.belongsTo(models.State, { foreignKey: "stateId" })
     Place.belongsTo(models.City, { foreignKey: "cityId" })
     Place.belongsTo(models.User, {foreignKey: "userId"})
+    Place.hasMany(models.Booking, {foreignKey: "placeId"})
     // Place.belongsTo(models.PlaceType, {foreignKey: "placeTypeId"})
   };
   return Place;
