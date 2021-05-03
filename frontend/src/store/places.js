@@ -1,8 +1,8 @@
 import { csrfFetch } from "./csrf"
+import moment from 'moment'
 
 const LOAD_PLACES = 'places/LOAD_PLACES'
 const LOAD_DETAILS = 'places/GET_DETAILS'
-const CREATE_PLACE = 'places/CREATE_PLACE'
 const ADD_PLACE = 'places/ADD_PLACE'
 
 const loadPlaces = list => ({
@@ -21,7 +21,33 @@ const loadDetails = place => ({
 })
 
 export const getPlaces = () => async dispatch => {
+
     const res = await fetch('/api/places');
+
+    if (!res.ok) throw res;
+
+    const list = await res.json();
+
+    // console.log(list)
+
+    dispatch(loadPlaces(list));
+
+    // return res;
+
+}
+
+export const getQueriedPlaces = ({startDate, endDate}) => async dispatch => {
+
+    const startDateStr = moment(startDate).format();
+    const endDateStr = moment(endDate).format();
+
+    const res = await csrfFetch(`/api/places/search`,{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({startDate, endDate})
+    });
 
     if (!res.ok) throw res;
 

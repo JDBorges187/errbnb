@@ -51,7 +51,7 @@ label {
     color: lightslategray;
 }
 
-input, textarea, select {
+.places-form :is(input, textarea, select) {
     background-color: black;
     color: lightslategray;
     padding: 0 1rem;

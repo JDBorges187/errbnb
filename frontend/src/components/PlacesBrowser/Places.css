@@ -38,11 +38,13 @@
     background-size: cover;
     flex: 0 0 120px;
 }
-.card__content { 
+
+.card__content {
     padding: 1rem;
     display: flex;
     flex-direction: column;
 }
+
 .card__title {
     font-size: 1.25rem;
     font-weight: 700;
@@ -55,6 +57,15 @@
 
 .card__price {
     margin-top: auto;
-    
 }
 
+.search {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search input {
+    padding: 4px;
+    margin-bottom: 10px;
+}
