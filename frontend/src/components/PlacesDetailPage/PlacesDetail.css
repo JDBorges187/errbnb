@@ -1,0 +1,40 @@
+.property__container {
+    padding: 4% 12%;
+    margin-top: 32px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.property__preview {
+    width: 50%;
+}
+
+.property__preview>img {
+    width: 100%
+}
+
+.property__details {
+    width: 50%;
+    padding: 1rem;
+    background-color: #485461;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.property__bedbaths {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.property__bedbaths>li{
+    list-style: none;
+}
+
+.property__book {  
+    margin: 0 auto;
+}

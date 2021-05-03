@@ -45,16 +45,40 @@ router.post('/', validateNewPlace, requireAuth,
 
         res.json({[place.id]: place})
     }))
-
+    
+    router.post('/search', asyncHandler(async (req, res, next) => {
+    
+        const {startDate} = req.body;
+        console.log('#######', startDate)
+    
+        
+            const places = await Place.findAll({
+                include: [ City, State],
+                limit: 6,
+                order: [['createdAt', 'DESC']]
+            });
+    
+    
+        const placesObj = {};
+        places.forEach(place => {
+            placesObj[place.id] = place;
+        })
+        
+        res.json(placesObj);
+    }))
 
 router.get('/', asyncHandler(async (req, res, next) => {
 
-    // console.log('test')
-    const places = await Place.findAll({
-        include: [ City, State],
-        // limit: 6,
-        order: [['createdAt', 'DESC']]
-    });
+    const startDate = req.query.startDate;
+    console.log('#######', startDate)
+
+    
+        const places = await Place.findAll({
+            include: [ City, State],
+            // limit: 6,
+            order: [['createdAt', 'DESC']]
+        });
+
 
     const placesObj = {};
     places.forEach(place => {
@@ -63,6 +87,25 @@ router.get('/', asyncHandler(async (req, res, next) => {
 
     res.json(placesObj);
 
+}))
+
+
+
+router.get('/:id', asyncHandler(async(req,res,next)=>{
+    
+    const place = await Place.findByPk(req.params.id,{
+        include: User,
+    })
+
+    if (!place) {
+        const err = new Error('Resource Not Found');
+        err.status = 404;
+        err.title = 'Resource Not Foun';
+        err.errors = ['The provided Place id could not be found'];
+        return next(err);
+      }
+
+    res.json(place);
 }))
 
 

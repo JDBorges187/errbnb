@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
-
 nav {
     background-color: #485461;
     font-size: 20px;
@@ -9,13 +8,18 @@ nav {
     justify-content: space-around;
     color: #3d2413;
     width: 100vmax;
+    box-shadow: 2px 4px rgb(0 0 0 / 12%);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
 }
 
-nav ul {
+nav {
     display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.nav__link {
+.nav__link, .nav__link:visited {
     text-decoration: none;
     color: lightgrey;
 }
@@ -25,3 +29,21 @@ nav ul {
     padding-right: 20px;
     padding-top: 4px;
 }
+
+.profile-dropdown {
+    position: absolute;
+    background-color: #485461;
+    margin-top: 10vh;
+    padding-top: 0;
+    min-width: 20%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.profile-dropdown * {
+    list-style: none;
+    border-bottom: 1px solid lightgrey;
+}
+

@@ -9,6 +9,7 @@ import PlacesFormPage from './components/PlacesFormPage'
 import PlacesBrowser from "./components/PlacesBrowser";
 import HomePage from "./components/HomePage";
 import Booking from "./components/Booking/Booking";
+import PlacesDetailPage from "./components/PlacesDetailPage";
 
 
 
@@ -32,8 +33,11 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/places">
+          <Route path="/places" exact>
             <PlacesBrowser />
+          </Route>
+          <Route path="/places/:placeId">
+            <PlacesDetailPage />
           </Route>
           <Route path="/host">
             <PlacesFormPage />
