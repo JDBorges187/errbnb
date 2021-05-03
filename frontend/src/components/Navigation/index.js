@@ -20,6 +20,7 @@ function Navigation({ isLoaded }) {
         sessionLinks = (
             <>
                 <NavLink className="nav__link" to='/host'>Become a Host</NavLink>
+                <NavLink className="nav__link" to='/bookings'>My Bookings</NavLink>
                 <ProfileButton user={sessionUser} />
             </>
         )

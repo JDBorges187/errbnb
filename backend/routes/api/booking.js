@@ -11,14 +11,29 @@ router.post('/', requireAuth,
     asyncHandler(async (req, res) => {
         const {placeId, startDate, endDate} = req.body;
 
-        res.json({message:"success"})
-
         const booking = await Booking.create({
             userId: req.user.id,
             placeId,
             startDate,
             endDate
         })
+
+        res.json(booking)
+
+
+    }))
+
+    router.get('/', requireAuth,
+    asyncHandler(async(req,res,next) => {
+        const userId = req.user.id;
+
+        const bookings = await Booking.findAll({
+            where: {
+                userId
+            }
+        })
+
+        res.json(bookings)
     }))
 
 

@@ -17,6 +17,7 @@ function PlacesDetailPage() {
     const [focusedInput, setFocusedInput] = useState(null)
 
     const place = useSelector(state => state.places.details[placeId])
+    const booking = useSelector(state=> state.bookings.list)
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
@@ -58,7 +59,7 @@ function PlacesDetailPage() {
                     <p className="property__desc">
                         {place.description}
                     </p>
-                    {sessionUser && (
+                    {sessionUser && !booking && (
 
                         <form className="prop-booking-form"
                             onSubmit={handleSubmit}>
@@ -74,6 +75,9 @@ function PlacesDetailPage() {
                             />
                             <button className="property__book">Book this Place</button>
                         </form>
+                    )}
+                    {booking && (
+                        <h1 className="property_booking">BOOKED!</h1>
                     )}
                 </div>
             </div>
