@@ -2,7 +2,7 @@
 
 Errbnb is a place for software engineers, developers, and remote workers to find a place to crash!
 
-### More Details Coming Soon!
+### [LINK](https://errbnb-app.herokuapp.com/)
 
 
 ### Back End
@@ -17,6 +17,8 @@ The front end was built using React Components to render the pages with JavaScri
 * React
 * Redux
 * [airbnb/react-dates](https://github.com/airbnb/react-dates)
+* MomentJS(For Efficient Date Object Handling)
+* 
 
 ### Core Features
 * Add/ delete places.
@@ -24,3 +26,5 @@ The front end was built using React Components to render the pages with JavaScri
 * Sign up/Login/ Demo User
 ##### User Authorization
 User authentication is handled in JavaScript using BCrypt to hash passwords for storage. To authenticate users, the submitted password is hashed and then compared to the hashed password stored in the database.
+
+
